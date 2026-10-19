@@ -10,11 +10,6 @@ class SecondWindow(tk.Frame):
         super()._init_(parent, background="green")
         tk.Label(self, text="This is JCC").pack(padx=10, pady=10)
 
-class ThirdWindow(tk.Frame):
-    def _init_(self, parent):
-        super()._init_(parent, background="blue")
-        tk.Label(self, text="IOH").pack(padx=10, pady=10)
-
 class MainWindow:
     def _init_(self, master):
         master.geometry("320x160")
@@ -23,7 +18,6 @@ class MainWindow:
         self.index = 0
 
         self.frameList = [FirstWindow(self.mainframe), SecondWindow(self.mainframe)
-        self.frameList.pack(expand=True, fill=tk.BOTH), ThirdWindow(self.mainframe)
         self.frameList.pack(expand=True, fill=tk.BOTH)]
 
         bottomframe = tk.Frame(master)
@@ -37,5 +31,4 @@ class MainWindow:
 
 root = tk.Tk()
 window = MainWindow(root)
-print("Window created — now entering mainloop", flush=True)
 root.mainloop()
